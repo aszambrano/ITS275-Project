@@ -1,1 +1,105 @@
+import java.util.Scanner; 
+//this imports a scanner for inputs in our program
+public class Javaproject {
+//name of class
+public static void main(String[] args)  
+{
+	String name;
+	//declaring all variables
+	//name is a string	
+	String program;
+	//declaring program as a string for if you want to run program
+	float income;
+	//income is a float
+	float rent;
+	//rent is a float
+	float groceries;
+	//groceries are a float
+	float recreation;
+	//recreation is a float
+	float gas;
+	//gas is a float
+	int average;
+	average=2082;
+	//this is declaring a constant to the national average 
+	//monthly spending of a college student
+	float expenses;
+	//expenses will be the sum of all rent + groceries + recreation + gas 
+	float savings;
+	//savings will be the total amount leftover when income - expenses 
+		
+	Scanner Gaylord = new Scanner(System.in);
+	//we named the scanner gaylord because roll humps
+	
+	System.out.print("If you would like to run our program hit enter, if not type 'no'");
+		program = Gaylord.nextLine();
+		//This will be the deciding while loop to either run the program or not
+	
+	while (program.equals ("no"));
+	//if 'no' is typed, the program will not run, if anything else, it will
+	{
+	System.out.print("What is your name? ");
+	   name = Gaylord.nextLine();
+	//this prints a statement and asks for input
+	   
+	System.out.print("What is your monthly income? ");
+		income = Gaylord.nextFloat(); 
+	//user will be asked to input their income
+		
+	System.out.print("What is yout monthly rent? ");
+		rent = Gaylord.nextFloat();
+	//user will be asked to input their rent
+	
+	System.out.print("What is your monthly grocery expense? ");
+		groceries = Gaylord.nextFloat();
+	//user will be asked to input their grocery spending
+	
+	System.out.print("What do you spend on recreational activites per month? ");
+		recreation = Gaylord.nextFloat();
+	//user will be asked to input their recreational spending
+		
+	System.out.print("What do you spend on gas per month?");
+		gas = Gaylord.nextFloat();
+	//user will be asked to input their gas spending
+	
+	expenses = rent + groceries + recreation + gas;
+	//this calculates total monthly expenses
+	
+	System.out.println("Your total expenses is: $" + expenses);	
+	//prints total expenses
+	
+	savings = income - expenses; 
+	//subtracts expenses from income to get monthly savings
+	
+	System.out.println("Your total savings is: $" + savings);
+	//prints monthly savings
 
+	if (expenses > income || expenses == income)
+	//this uses an or conditional to compare expenses and income in an if-else statement
+	{
+		System.out.println("You do not have money left over for savings.");
+		//This will print if the if is satisfied
+	}
+	else
+	//if-else statement
+	{
+		System.out.println("Congratulations! You are saving money.");
+		//this will print if the if is not satisfied
+	}
+	
+	if (expenses <= average)
+	//this is an if statement to compare expenses and average spending
+	{
+		System.out.println("You spend less money than the average college student.");
+		//this will print if the if statement is satisfied
+	}
+	
+	if (expenses > average)
+	//this is another if statement comparing expenses and average
+	{
+		System.out.println("You spend more than the average college student");
+		//this will print if this if statement is satisfied
+	}
+	}
+}
+}
